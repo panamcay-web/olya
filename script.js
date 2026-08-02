@@ -97,8 +97,12 @@
       if (ticking) return;
       ticking = true;
       requestAnimationFrame(function () {
+        // в самом верху — ровно кадр макета (без масштаба),
+        // увеличение подмешивается только по мере ухода со страницы
         var y = Math.min(window.scrollY, window.innerHeight);
-        heroImg.style.transform = 'translate3d(0,' + (y * 0.16) + 'px,0) scale(1.06)';
+        var k = y / window.innerHeight;
+        heroImg.style.transform =
+          'translate3d(0,' + (y * 0.12) + 'px,0) scale(' + (1 + k * 0.26).toFixed(4) + ')';
         ticking = false;
       });
     }, { passive: true });

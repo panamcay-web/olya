@@ -101,11 +101,14 @@ em{ font-style:italic; }
 
 .hero{
   position:relative;
+  /* пропорции кадра — ровно как в макете (853×1844),
+     чтобы фото не обрезалось по бокам на широких/коротких экранах */
+  aspect-ratio:853 / 1844;
   min-height:100vh;              /* запасной вариант для старых браузеров */
   min-height:var(--hero-h);      /* 100svh — учитывает панель браузера */
   display:flex;
   flex-direction:column;
-  padding:calc(clamp(60px,14vh,118px) + env(safe-area-inset-top)) 28px calc(12px + env(safe-area-inset-bottom));
+  padding:calc(clamp(60px,14vh,118px) + env(safe-area-inset-top)) 28px calc(9px + env(safe-area-inset-bottom));
   overflow:hidden;
 }
 
@@ -170,7 +173,7 @@ em{ font-style:italic; }
 .hero__scroll{
   position:relative; z-index:1;
   margin-top:44px;
-  display:flex; flex-direction:column; align-items:center; gap:7px;
+  display:flex; flex-direction:column; align-items:center; gap:5px;
   text-decoration:none;
   color:var(--ink);
   font-size:.83rem;
@@ -416,6 +419,9 @@ em{ font-style:italic; }
     padding:32px 0;
   }
   .phone{
+    /* ширина рамки следует за высотой окна: первый экран всегда
+       остаётся в пропорциях макета и целиком помещается на экран */
+    max-width:min(440px, calc((100svh - 64px) * .4626));
     border-radius:34px;
     box-shadow:0 40px 90px -40px rgba(50,44,34,.65), 0 0 0 1px rgba(44,42,37,.06);
   }
