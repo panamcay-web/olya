@@ -192,6 +192,146 @@ em{ font-style:italic; }
   50%    { transform:translateY(5px); opacity:1; }
 }
 
+/* ═══════════════════════════════════════════
+   ЭКРАН 2 — «Вкусные завтраки»
+   Все размеры — доли ширины макета (853 px):
+   1 px макета = 100/853 cqw = .11723cqw
+   ═══════════════════════════════════════════ */
+
+.scr2{
+  container-type:inline-size;
+  position:relative;
+  overflow:hidden;
+  background:#FAF6F1;
+  padding:0 0 3.87cqw;         /* cqw должен считаться от полной ширины */
+  text-align:center;
+  isolation:isolate;
+}
+
+/* ветка в правом верхнем углу: кремовый фон вырезается режимом darken */
+.scr2__branch{
+  position:absolute; top:0; right:0;
+  width:30.13cqw;              /* 257 px макета, вырезано до края холста */
+  mix-blend-mode:darken;
+  pointer-events:none;
+}
+
+.scr2__title{
+  margin:0;
+  padding-top:6.56cqw;
+  font-family:var(--ff-serif);
+  font-weight:500;
+  font-size:6.01cqw;           /* кегль подобран по ширине «чернил» макета */
+  line-height:1.2;
+  letter-spacing:.012em;
+  text-transform:uppercase;
+  color:#38251B;
+}
+
+.scr2__sub{
+  margin-top:.6cqw;
+  font-family:var(--ff-serif);
+  font-style:italic;
+  font-weight:500;
+  font-size:6.05cqw;
+  line-height:1.2;
+  color:#3F5830;
+}
+
+.scr2__flourish{
+  display:block;
+  width:7.03cqw;               /* 60 px макета */
+  margin:1.4cqw auto 0;
+}
+
+.scr2__lead{
+  margin-top:2.7cqw;
+  font-size:2.55cqw;
+  line-height:1.36;
+  color:#4A3A33;
+}
+
+/* ─── карточки ─── */
+
+.scr2__cards{ width:90.62cqw; margin:5.02cqw auto 0; }   /* 773 px макета */
+.rcard{ position:relative; }
+.rcard + .rcard{ margin-top:3.52cqw; }   /* 30 px макета */
+
+.rcard__photo{
+  width:100%; height:auto;
+  border-radius:3.28cqw;
+  display:block;
+}
+
+.rcard__bar{
+  position:relative;
+  margin:-4.45cqw auto 0;      /* плашка заходит на фото на 38 px макета */
+  width:84.76cqw;              /* 723 px макета */
+  height:10.2cqw;              /* 87 px макета */
+  display:flex; align-items:center;
+  padding:0 1.4cqw 0 3.4cqw;
+  border-radius:999px;
+  background:#FCFAF6;
+  box-shadow:0 1.2cqw 2.4cqw -1.4cqw rgba(56,37,27,.28);
+}
+
+.rcard__clock{ width:3.87cqw; flex:none; }
+
+.rcard__time{
+  margin-left:1.6cqw;
+  font-size:2.06cqw;
+  color:#4A3A33;
+  white-space:nowrap;
+}
+
+.rcard__sep{
+  width:1px; height:4.57cqw;
+  margin-left:2.86cqw;
+  background:#E3DFD7;
+  flex:none;
+}
+
+.rcard__name{
+  flex:1;
+  margin:0 3.1cqw 0 1.6cqw;
+  font-family:var(--ff-serif);
+  font-weight:500;
+  font-size:3.68cqw;           /* 32 px макета */
+  line-height:1.15;
+  color:#33211A;
+  white-space:nowrap;
+}
+
+.rcard__mark{
+  flex:none;
+  width:7.15cqw; height:7.15cqw;   /* 61 px макета */
+  border-radius:50%;
+  background:#F1EDE6;
+  display:flex; align-items:center; justify-content:center;
+}
+.rcard__mark img{ width:4.4cqw; }
+
+/* ─── подвал экрана ─── */
+
+.scr2__heart{ display:block; width:5.51cqw; margin:4.22cqw auto 0; }
+
+.scr2__more{
+  margin-top:.47cqw;
+  font-family:var(--ff-serif);
+  font-weight:500;
+  font-size:3.60cqw;           /* вторая строка */
+  line-height:4.1cqw;          /* шаг строк 35 px макета */
+  color:#38251B;
+}
+.scr2__more span{ font-size:1.218em; }   /* первая строка крупнее */
+.scr2__more b{
+  font-weight:500;
+  font-size:1.8em;
+  color:#3F5830;
+}
+
+.scr2__leafline{ display:block; width:22.63cqw; margin:.82cqw auto 0; }
+
 /* ─── статистика ─────────────────────────── */
 
 .stats{ margin-top:26px; display:grid; gap:12px; }
